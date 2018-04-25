@@ -37,7 +37,7 @@ export default {
     let blurFilter = new PIXI.filters.BlurFilter(10)
     // background.filters = [blurFilter, alphaFilter]
 
-    let displacementSprite = PIXI.Sprite.fromImage('/gradient_small.png')
+    let displacementSprite = PIXI.Sprite.fromImage('../gradient_small.png')
     displacementSprite.height = app.screen.height
     let displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite)
     app.stage.addChild(displacementSprite)
@@ -83,12 +83,7 @@ export default {
 
       let offset = dx*(-0.025)
 
-      if (offset) {
-        console.log(offset)
-        TweenMax.to(displacementSprite.scale, 0.5, { x: offset })
-      } else {
-        TweenMax.to(displacementSprite.scale, 0.25, { x: 0 })
-      }
+      TweenMax.to(displacementSprite.scale, 0.5, { x: offset })
     }
   }
 }
