@@ -1,3 +1,9 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/pixi-lab/'
+  }
+} : {}
+
 module.exports = {
   /*
   ** Headers of the page
@@ -37,5 +43,6 @@ module.exports = {
   },
   plugins: [
     { src: '~/plugins/pixi.js', ssr: false }
-  ]
+  ],
+  ...routerBase
 }
