@@ -8,8 +8,6 @@ import PixiPlugin from 'gsap'
 export default {
   mounted () {
 
-    console.log(PixiPlugin)
-
     // Create a new application
     const app = new PIXI.Application({
       width: window.innerWidth,
@@ -37,7 +35,7 @@ export default {
     let blurFilter = new PIXI.filters.BlurFilter(10)
     // background.filters = [blurFilter, alphaFilter]
 
-    let displacementSprite = PIXI.Sprite.fromImage('../gradient_small.png')
+    let displacementSprite = PIXI.Sprite.fromImage('./gradient_small.png')
     displacementSprite.height = app.screen.height
     let displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite)
     app.stage.addChild(displacementSprite)
